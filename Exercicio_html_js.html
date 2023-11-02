@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício HTML.JS</title>
+</head>
+<body>
+    <h2>Formulário de Validação B > A</h2>
+    <form id="meuForm">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required>
+        <br>
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+        const meuForm = document.getElementById("meuForm");
+        const campoA = document.getElementById("campoA");
+        const campoB = document.getElementById("campoB");
+        const mensagem = document.getElementById("mensagem");
+
+        meuForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const valorA = parseFloat(campoA.value);
+            const valorB = parseFloat(campoB.value);
+
+            if (isNaN(valorA) || isNaN(valorB)) {
+                mensagem.textContent = "Por favor, insira números válidos em ambos os campos.";
+            } else if (valorB > valorA) {
+                mensagem.textContent = "Formulário válido! B é maior que A.";
+            } else {
+                mensagem.textContent = "Formulário inválido. B deve ser maior que A.";
+            }
+        });
+    </script>
+</body>
+</html>
