@@ -1,0 +1,21 @@
+body {
+    background-color: #f7eded;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+  
+    .completed {
+    text-decoration: line-through;
+  }
+  .line {
+    display: block;
+    height: 1px;
+    background-color: #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .line-through {
+    text-decoration: line-through;
+  }
+  
